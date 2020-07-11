@@ -44,7 +44,7 @@ class _AspectratioState extends State<Aspectratio> {
               ),
             ),
             SizedBox(
-              height: 20,
+              height: 20, 
             ),
             Container(
               padding: EdgeInsets.all(12),
