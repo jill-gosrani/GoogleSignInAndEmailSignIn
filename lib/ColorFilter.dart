@@ -12,7 +12,13 @@ class _colorFilterState extends State<colorFilter> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ColorFilter"),
+        title: Text(
+         'Color Filter',
+         style: TextStyle(
+           color: Colors.black45,
+         ),
+        ),
+       backgroundColor: Color(0xFF64FFDA),
       ),
       body: Center(
         child: Column(
@@ -76,6 +82,7 @@ class _colorFilterState extends State<colorFilter> {
             ),
             SizedBox(height:30),
             RaisedButton(
+              color: Colors.red[100],
               child: Text("Back"),
               onPressed: () {
                 Navigator.pop(context);

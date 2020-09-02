@@ -58,6 +58,7 @@ class _ignorePointerState extends State<ignorePointer> {
                   IgnorePointer(
                     ignoring: true,
                     child: RaisedButton(
+                      color: Colors.red[100],
                       onPressed: () {
                         _scaffoldKey.currentState.showSnackBar(
                             SnackBar(content: Text('This Button is pressed')));
@@ -67,6 +68,7 @@ class _ignorePointerState extends State<ignorePointer> {
                   ),
                   SizedBox(height: 20),
                   RaisedButton(
+                    color: Colors.red[100],
                     onPressed: () {
                       _scaffoldKey.currentState.showSnackBar(
                           SnackBar(content: Text('This Button is pressed')));
@@ -78,6 +80,7 @@ class _ignorePointerState extends State<ignorePointer> {
             ),
             SizedBox(height:30),
             RaisedButton(
+              color: Colors.red[100],
               child: Text("Back"),
               onPressed: () {
                 Navigator.pop(context);

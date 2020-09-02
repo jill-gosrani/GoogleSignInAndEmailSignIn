@@ -62,6 +62,7 @@ class _RichtextState extends State<Richtext> {
             ),
             SizedBox(height:30),
             RaisedButton(
+              color: Colors.red[100],
               child: Text("Back"),
               onPressed: () {
                 Navigator.pop(context);

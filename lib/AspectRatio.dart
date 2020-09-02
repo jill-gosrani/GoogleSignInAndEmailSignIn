@@ -10,7 +10,13 @@ class _AspectratioState extends State<Aspectratio> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("AspectRatio"),
+        title:Text(
+         'Aspect Ratio',
+         style: TextStyle(
+           color: Colors.black45,
+         ),
+        ),
+       backgroundColor: Color(0xFF64FFDA),
       ),
       body: Center(
         child: Column(
@@ -64,6 +70,7 @@ class _AspectratioState extends State<Aspectratio> {
             ),
             SizedBox(height:10),
             RaisedButton(
+              color: Colors.red[100],
               child: Text("Back"),
               onPressed: () {
                 Navigator.pop(context);

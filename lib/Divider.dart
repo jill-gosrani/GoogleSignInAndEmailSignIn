@@ -12,7 +12,13 @@ class _dividerState extends State<divider> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Divider"),
+        title: Text(
+         'Divider',
+         style: TextStyle(
+           color: Colors.black45,
+         ),
+        ),
+       backgroundColor: Color(0xFF64FFDA),
       ),
       body: Center(
         child: Column(
@@ -72,6 +78,7 @@ class _dividerState extends State<divider> {
             ),
             SizedBox(height:30),
             RaisedButton(
+              color: Colors.red[100],
               child: Text("Back"),
               onPressed: () {
                 Navigator.pop(context);

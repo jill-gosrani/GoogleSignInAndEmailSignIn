@@ -20,13 +20,16 @@ class _ForgetPasswordState extends State<ForgetPassword> {
     return Scaffold(
       appBar: AppBar(
         title:Text(
-              'Enter Email',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 32,                 
-              ),
-            ),
+         'Enter Email',
+         style: TextStyle(
+           color: Colors.black45,
+           fontWeight: FontWeight.bold,
+                fontSize: 32,
+         ),
+        ),
+       backgroundColor: Color(0xFF64FFDA),
       ),
+        
       body: Form(
         key: _formkey,
         child: ListView(
@@ -65,7 +68,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               margin: EdgeInsets.all(20),
             ),
             RaisedButton(
-            color: Theme.of(context).accentColor,
+            // color: Theme.of(context).accentColor,
 
             padding: EdgeInsets.only(
               left: 48,
@@ -73,6 +76,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               top: 8,
               bottom: 8,
             ),
+            color:Colors.red[100],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(4),
             ),

@@ -19,6 +19,7 @@ class _AlertdialogState extends State<Alertdialog> {
             // usually buttons at the bottom of the dialog
             new FlatButton(
               child: new Text("Close"),
+              color: Colors.red[100],
               onPressed: () {
                 Navigator.of(context).pop();
               },
@@ -33,7 +34,13 @@ class _AlertdialogState extends State<Alertdialog> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Alertdialog"),
+        title: Text(
+         'Alertdialog',
+         style: TextStyle(
+           color: Colors.black45,
+         ),
+        ),
+       backgroundColor: Color(0xFF64FFDA),
       ),
       body: Center(
         child: Column(
@@ -60,6 +67,7 @@ class _AlertdialogState extends State<Alertdialog> {
             ),
             SizedBox(height: 50),
             RaisedButton(
+              color: Colors.red[100],
               onPressed: () {
                 _showDialog(context);
               },
@@ -67,6 +75,7 @@ class _AlertdialogState extends State<Alertdialog> {
             ),
             SizedBox(height:30),
             RaisedButton(
+              color: Colors.red[100],
               child: Text("Back"),
               onPressed: () {
                 Navigator.pop(context);

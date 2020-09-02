@@ -12,7 +12,13 @@ class _flexibleState extends State<flexible> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flexible"),
+        title: Text(
+         'Flexible',
+         style: TextStyle(
+           color: Colors.black45,
+         ),
+        ),
+       backgroundColor: Color(0xFF64FFDA),
       ),
       body: Center(
         child: Column(
@@ -80,6 +86,7 @@ class _flexibleState extends State<flexible> {
                   ),
                   SizedBox(height:30),
                   RaisedButton(
+                    color: Colors.red[100],
                     child:Text("Back"),
                     onPressed: (){
                       Navigator.pop(context);

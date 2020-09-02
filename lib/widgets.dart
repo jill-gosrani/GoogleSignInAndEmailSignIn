@@ -11,12 +11,12 @@ import 'package:loginFirebase/SizedBox.dart';
 import 'package:loginFirebase/Spacer.dart';
 import 'package:loginFirebase/ToolTip.dart';
 
-
 // ignore: camel_case_types
 class widgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SafeArea(
         child: newState(),
       ),
@@ -32,290 +32,61 @@ class newState extends StatefulWidget {
 
 // ignore: camel_case_types
 class _newStateState extends State<newState> {
-  
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(12),
-              height: 30,
-              color: Colors.pink[800],
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Alertdialog()));
-                      },
-                    child: Text(
-                      "For more information on Alert Dialog CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              height: 30,
-              color: Colors.indigo,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Richtext()));
-                    },
-                    child: Text(
-                      "For more information on RichText CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 30,
-              color: Colors.blue,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Selectabletext()));
-                    },
-                    child: Text(
-                      "For more information on SelectableText CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              height: 30,
-              color: Colors.green,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>flexible()));
-                    },
-                    child: Text(
-                      "For more information on Flexible CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 30,
-              color: Colors.yellowAccent,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>spacer()));
-                    },
-                    child: Text(
-                      "For more information on Spacer CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              height: 30,
-              color: Colors.orange,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>divider()));
-                    },
-                    child: Text(
-                      "For more information on Divider CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 30,
-              color: Colors.red,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>ignorePointer()));
-                    },
-                    child: Text(
-                      "For more information on IgnorePointer CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              height: 30,
-              color: Colors.pink[800],
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>colorFilter()));
-                    },
-                    child: Text(
-                      "For more information on ColorFilter CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 30,
-              color: Colors.indigo,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>tooltip()));
-                    },
-                    child: Text(
-                      "For more information on ToolTip CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              height: 30,
-              color: Colors.blue,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Aspectratio()));
-                    },
-                    child: Text(
-                      "For more information on AspectRatio CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              height: 30,
-              color: Colors.green,
-              padding: EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FlatButton(
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Sizedbox()));
-                    },
-                    child: Text(
-                      "For more information on SizedBox CLICK HERE",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          raisedButton(
+              "For more information on Alert Dialog CLICK HERE", Alertdialog()),
+          raisedButton(
+              "For more information on RichText CLICK HERE", Richtext()),
+          raisedButton("For more information on SelectableText CLICK HERE",
+              Selectabletext()),
+          raisedButton(
+              "For more information on Flexible CLICK HERE", flexible()),
+          raisedButton("For more information on Spacer CLICK HERE", spacer()),
+          raisedButton("For more information on Divider CLICK HERE", divider()),
+          raisedButton("For more information on IgnorePointer CLICK HERE",
+              ignorePointer()),
+          raisedButton(
+              "For more information on ColorFilter CLICK HERE", colorFilter()),
+          raisedButton("For more information on ToolTip CLICK HERE", tooltip()),
+
+          raisedButton(
+              "For more information on AspectRatio CLICK HERE", Aspectratio()),
+          raisedButton(
+              "For more information on SizedBox CLICK HERE", Sizedbox()),
         ],
       ),
     );
+  }
+
+  Widget raisedButton(String text, Widget next) {
+    return Container(
+      margin: EdgeInsets.all(5),
+    child:ClipRRect(
+      borderRadius: BorderRadius.circular(15),
+    child:SizedBox(
+      height:50,
+      width: double.maxFinite,
+      child: RaisedButton(
+        color: Colors.red[100],
+        elevation:20,
+        hoverElevation: 20.0,
+        onPressed: () {
+          // ignore: unnecessary_statements
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => next));
+        },
+        child: Text(
+          text,
+          style: TextStyle(
+            color: Colors.blueGrey,
+            fontSize: 14,
+          ),
+        ),
+      ),),
+    ),);
   }
 }
