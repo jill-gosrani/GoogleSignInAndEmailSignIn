@@ -37,26 +37,29 @@ class _newStateState extends State<newState> {
     return Scaffold(
       body: ListView(
         children: [
-          raisedButton(
-              "For more information on Alert Dialog CLICK HERE", Alertdialog()),
-          raisedButton(
-              "For more information on RichText CLICK HERE", Richtext()),
-          raisedButton("For more information on SelectableText CLICK HERE",
-              Selectabletext()),
-          raisedButton(
-              "For more information on Flexible CLICK HERE", flexible()),
-          raisedButton("For more information on Spacer CLICK HERE", spacer()),
-          raisedButton("For more information on Divider CLICK HERE", divider()),
-          raisedButton("For more information on IgnorePointer CLICK HERE",
-              ignorePointer()),
-          raisedButton(
-              "For more information on ColorFilter CLICK HERE", colorFilter()),
-          raisedButton("For more information on ToolTip CLICK HERE", tooltip()),
+          // raisedButton("MATERIAL APP", Alertdialog()),
+          // raisedButton("SCAFFOLD ", Alertdialog()),
+          // raisedButton("APP BAR ", Alertdialog()),
+          // raisedButton("CONTAINER ", Alertdialog()),
+          // raisedButton("SNACKBAR ", Alertdialog()),
+          // raisedButton("COLUMN ", Alertdialog()),
+          // raisedButton("ROW ", Alertdialog()),
+          // raisedButton("GEOLOCATION ", Alertdialog()),
+          // raisedButton("SLIVER APP BAR ", Alertdialog()),
+          // raisedButton("DRAWER ", Alertdialog()),
+          // raisedButton("DROPDOWN ", Alertdialog()),
 
-          raisedButton(
-              "For more information on AspectRatio CLICK HERE", Aspectratio()),
-          raisedButton(
-              "For more information on SizedBox CLICK HERE", Sizedbox()),
+          raisedButton("ALERT DIALOG ", Alertdialog()),
+          raisedButton("RICH TEXT ", Richtext()),
+          raisedButton("SELECTABLE TEXT ",Selectabletext()),
+          raisedButton("FLEXIBLE ", flexible()),
+          raisedButton("SPACER ", spacer()),
+          raisedButton("DIVIDER ", divider()),
+          raisedButton("IGNORE POINTER ",ignorePointer()),
+          raisedButton("COLOR FILTER ", colorFilter()),
+          raisedButton("TOOL TIP ", tooltip()),
+          raisedButton("ASPECT RATIO ", Aspectratio()),
+          raisedButton("SIZED BOX ", Sizedbox()),
         ],
       ),
     );
@@ -68,7 +71,7 @@ class _newStateState extends State<newState> {
     child:ClipRRect(
       borderRadius: BorderRadius.circular(15),
     child:SizedBox(
-      height:50,
+      height:65,
       width: double.maxFinite,
       child: RaisedButton(
         color: Colors.red[100],

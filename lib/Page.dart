@@ -116,7 +116,7 @@ class _Page2State extends State<Page2> {
                 onPressed: () {
                   googleSignIn.signOut().toString();
                   //  debugPrint('OK');
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context, MaterialPageRoute(builder: (context) => Head()));
 
                   _logout();
