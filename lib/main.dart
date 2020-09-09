@@ -98,52 +98,59 @@ class _FirstPageState extends State<FirstPage> {
         ),
         Container(
           color: Color.fromRGBO(249,213,186,0.65),
+          height: 60,
           child: Row(
             children: [
-              RaisedButton(
-                color: Colors.red[100],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => MyApp()));
-                },
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(
-                      Icons.alternate_email,
-                    ),
-                    SizedBox(width: 4),
-                    Text(
-                      "SignIn Using Email",
-                    ),
-                  ],
+              Container(
+                height:60,
+                child: RaisedButton(
+                  color: Color(0xFF64FFDA),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(40),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                        context, MaterialPageRoute(builder: (context) => MyApp()));
+                  },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.alternate_email,
+                      ),
+                      SizedBox(width: 4),
+                      Text(
+                        "SignIn Using Email",
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
-                width: 20,
+                width:28,
               ),
-              RaisedButton(
-                color: Colors.yellowAccent[100],
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                onPressed: () {
-                  _signIn(context);
-                },
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(
-                      Icons.group,
-                    ),
-                    SizedBox(width: 4),
-                    Text(
-                      "SignIn Using Google",
-                    ),
-                  ],
+              Container(
+                height: 60,
+                child: RaisedButton(
+                  color: Color(0xFF64FFDA),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  onPressed: () {
+                    _signIn(context);
+                  },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Icon(
+                        Icons.group,
+                      ),
+                      SizedBox(width: 4),
+                      Text(
+                        "SignIn Using Google",
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
