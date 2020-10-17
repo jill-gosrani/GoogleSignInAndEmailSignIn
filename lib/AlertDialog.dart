@@ -1,89 +1,198 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Alertdialog extends StatefulWidget {
-  @override
-  _AlertdialogState createState() => _AlertdialogState();
-}
-
-class _AlertdialogState extends State<Alertdialog> {
-  void _showDialog(BuildContext context) {
-    // flutter defined function
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        // return object of type Dialog
-        return AlertDialog(
-          title: new Text("Something went Wrong "),
-          content: new Text("go Back"),
-          actions: <Widget>[
-            // usually buttons at the bottom of the dialog
-            new FlatButton(
-              child: new Text("Close"),
-              color: Colors.red[100],
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
+class LAWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-         'Alertdialog',
-         style: TextStyle(
-           color: Colors.black45,
-         ),
-        ),
-       backgroundColor: Color(0xFF64FFDA),
-      ),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: EdgeInsets.all(12),
-              child: Text(
-                "Alert Dialog",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30,
+    return LAlertWidget();   
+  }
+}
+
+class LAlertWidget extends StatelessWidget {
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  Widget build(BuildContext context) {
+    //Function to Show SnackBar on dialog dismiss
+
+    void _showSnackBar(String text, String ans) {
+      final snackBar = SnackBar(
+          duration: Duration(milliseconds: 500),
+          backgroundColor:
+              ans.compareTo("Yes") == 0 ? Colors.green : Colors.red,
+          content: Row(
+            children: <Widget>[
+              Icon(
+                ans.compareTo("Yes") == 0 ? Icons.favorite : Icons.watch_later,
+                color: ans.compareTo("Yes") == 0 ? Colors.pink : Colors.yellow,
+                size: 24.0,
+                semanticLabel: text,
+              ),
+              Text(text)
+            ],
+          ));
+      _scaffoldKey.currentState.showSnackBar(snackBar);
+    }
+
+    // Simple Dialog
+
+    Future<void> _simpleDialog() async {
+      switch (await showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return SimpleDialog(
+              title: const Text('Simple Dialog, Is it nice?'),
+              children: <Widget>[
+                SimpleDialogOption(
+                  onPressed: () {
+                    Navigator.pop(context, "Yes");
+                  },
+                  child: const Text('Yes'),
                 ),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(12),
-              child: Text(
-                "An alert dialog is a useful tool that alerts the app’s user. It is a pop up in the middle of the screen which places an overlay over the background. Most commonly, it is used to confirm one of the user’s potentially unrevertable actions.There are limitless possibilities for an AlertDialog,Actions are where you put the buttons, usually at the bottom of the dialog. The actions field takes in a list of widgets therefore allowing you to put as many action widgets as you like.",
-                softWrap: true,
-                textAlign: TextAlign.justify,
-              ),
-            ),
-            SizedBox(height: 50),
-            RaisedButton(
-              color: Colors.red[100],
-              onPressed: () {
-                _showDialog(context);
-              },
-              child: Text('click me'),
-            ),
-            SizedBox(height:30),
-            RaisedButton(
-              color: Colors.red[100],
-              child: Text("Back"),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
+                SimpleDialogOption(
+                  onPressed: () {
+                    Navigator.pop(context, "No");
+                  },
+                  child: const Text('No'),
+                ),
+              ],
+            );
+          })) {
+        case "Yes":
+          _showSnackBar("Thanks!", "Yes");
+          break;
+        case "No":
+          _showSnackBar("Oh! No... Try to provide you best", "No");
+          break;
+      }
+    }
+
+    Future<void> _alertDialog() async {
+      switch (await showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              content: Text('Is it nice?'),
+              title: Text('Alert Dialog'),
+              actions: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context, "Yes");
+                  },
+                  child: const Text('Yes'),
+                ),
+                FlatButton(
+                  onPressed: () {
+                    Navigator.pop(context, "No");
+                  },
+                  child: const Text('No'),
+                ),
+              ],
+            );
+          })) {
+        case "Yes":
+          _showSnackBar("Thanks!", "Yes");
+          break;
+        case "No":
+          _showSnackBar("Oh! No... Try to provide you best", "No");
+          break;
+      }
+    }
+
+    void _timerDialog() {
+      DateTime now = DateTime.now();
+      showTimePicker(
+          context: context,
+          initialTime: TimeOfDay(hour: now.hour, minute: now.minute))
+          .then((onValue) {
+        _showSnackBar(onValue.format(context), "ok");
+      });
+    }
+
+    void _datePickerDialog() {
+      DateTime now = DateTime.now();
+      showDatePicker(
+          context: context,
+          initialDate: now,
+          firstDate: DateTime(2000),
+          lastDate: DateTime(2050))
+          .then((onValue) {
+        _showSnackBar('$onValue', "ok");
+      });
+    }
+
+    // ignore: non_constant_identifier_names
+    Future<void> _CupertinoDialog() async {
+      switch (await showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return CupertinoAlertDialog(
+              title: const Text('Welcome'),
+              content: Text("Cupertino Dialog, Is it nice?"),
+              actions: <Widget>[
+                CupertinoDialogAction(
+                  onPressed: () {
+                    Navigator.pop(context, "Yes");
+                  },
+                  child: const Text('Yes'),
+                ),
+                CupertinoDialogAction(
+                  onPressed: () {
+                    Navigator.pop(context, "No");
+                  },
+                  child: const Text('No'),
+                ),
+              ],
+            );
+          })) {
+        case "Yes":
+          _showSnackBar("Thanks!", "Yes");
+          break;
+        case "No":
+          _showSnackBar("Oh! No... Try to provide you best", "No");
+          break;
+      }
+    }
+
+    return SafeArea(
+      child:  Scaffold(
+          key:_scaffoldKey,
+          appBar:AppBar(
+          title:Text(
+           'Alert Dialog',          
+           style: TextStyle(
+             color: Colors.black45,
+           ),
+          ),
+          backgroundColor: Color(0xFF64FFDA),
       ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                RaisedButton(
+                  child: Text('Simple Dialog'),
+                  onPressed: _simpleDialog,
+                ),
+                RaisedButton(
+                  child: Text('Alert Dialog'),
+                  onPressed: _alertDialog,
+                ),
+                RaisedButton(
+                  child: Text('Date Picker Dialog'),
+                  onPressed: _datePickerDialog,
+                ),
+                RaisedButton(
+                  child: Text('Timer Picker Dialog'),
+                  onPressed: _timerDialog,
+                ),
+                RaisedButton(
+                  child: Text('Cupertino Dialog'),
+                  onPressed: _CupertinoDialog,
+                )
+              ],
+            ),
+          ),
+        ),
     );
   }
 }

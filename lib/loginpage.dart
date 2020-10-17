@@ -12,10 +12,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: true,
-      home: LoginPage(),
-    );
+    return  LoginPage();
   }
 }
 

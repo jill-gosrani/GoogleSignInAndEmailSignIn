@@ -50,7 +50,7 @@ class _newStateState extends State<newState> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Alertdialog()));
+                              builder: (context) => LAlertWidget()));
                     },
                     child: Text(
                       "For more information on Alert Dialog CLICK HERE",

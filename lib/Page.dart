@@ -214,8 +214,8 @@ class _Page2State extends State<Page2> {
   }
 }
 
-class AddData extends StatefulWidget {
-  @override
+class AddData extends StatefulWidget  {
+  @override  
   _AddDataState createState() => _AddDataState();
 }
 

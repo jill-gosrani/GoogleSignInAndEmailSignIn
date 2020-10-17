@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:loginFirebase/AlertDialog.dart';
+import 'package:loginFirebase/AppBarFile.dart';
 import 'package:loginFirebase/AspectRatio.dart';
 import 'package:loginFirebase/ColorFilter.dart';
+import 'package:loginFirebase/columnFile.dart';
+import 'package:loginFirebase/conFile.dart';
 import 'package:loginFirebase/Divider.dart';
 import 'package:loginFirebase/Flexible.dart';
 import 'package:loginFirebase/IgnorePointer.dart';
+import 'package:loginFirebase/Materialfile.dart';
 import 'package:loginFirebase/RichText.dart';
+import 'package:loginFirebase/Scaffoldfile.dart';
 import 'package:loginFirebase/SelectableText.dart';
 import 'package:loginFirebase/SizedBox.dart';
 import 'package:loginFirebase/Spacer.dart';
 import 'package:loginFirebase/ToolTip.dart';
+import 'package:loginFirebase/snackBar.dart';
 
 // ignore: camel_case_types
 class widgets extends StatelessWidget {
@@ -35,21 +41,27 @@ class _newStateState extends State<newState> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar:AppBar(
+      title: Center(
+        child: Text(
+           'Flutter Widgets',          
+           style: TextStyle(
+             color: Colors.black45,
+             fontSize:25,
+           ),
+          ),
+      ),
+       backgroundColor: Color(0xFF64FFDA),
+      ),
       body: ListView(
         children: [
-          // raisedButton("MATERIAL APP", Alertdialog()),
-          // raisedButton("SCAFFOLD ", Alertdialog()),
-          // raisedButton("APP BAR ", Alertdialog()),
-          // raisedButton("CONTAINER ", Alertdialog()),
-          // raisedButton("SNACKBAR ", Alertdialog()),
-          // raisedButton("COLUMN ", Alertdialog()),
-          // raisedButton("ROW ", Alertdialog()),
-          // raisedButton("GEOLOCATION ", Alertdialog()),
-          // raisedButton("SLIVER APP BAR ", Alertdialog()),
-          // raisedButton("DRAWER ", Alertdialog()),
-          // raisedButton("DROPDOWN ", Alertdialog()),
-
-          raisedButton("ALERT DIALOG ", Alertdialog()),
+          raisedButton("MATERIAL APP ", LMaterialWidget()),
+          raisedButton("SCAFFOLD ", LScaffoldWidget()),
+          raisedButton("APP BAR ", LAppBarWidget()),
+          raisedButton("CONTAINER ", LCWidget()),
+          raisedButton("SNACK BAR ", LSWidget()),
+          raisedButton("COLUMN ", LColumn()),
+          raisedButton("ALERT DIALOG ", LAlertWidget()),
           raisedButton("RICH TEXT ", Richtext()),
           raisedButton("SELECTABLE TEXT ",Selectabletext()),
           raisedButton("FLEXIBLE ", flexible()),
